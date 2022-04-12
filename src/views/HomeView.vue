@@ -47,7 +47,7 @@ export default {
         });
     },
     movieDestroy: function (movie) {
-      axios.patch("/movies/" + movie.id + ".json").then((response) => {
+      axios.delete("/movies/" + movie.id + ".json").then((response) => {
         console.log("movie destroyed", response.data);
         var index = this.movies.indexOf(movie);
         this.movies.splice(index, 1);
