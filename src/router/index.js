@@ -1,11 +1,35 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import MoviesIndex from "../views/MoviesIndex.vue";
+import MoviesCreate from "../views/MoviesCreate.vue";
+import MoviesShow from "../views/MoviesShow.vue";
+import MoviesEdit from "../views/MoviesEdit.vue";
 
 const routes = [
   {
     path: "/",
     name: "home",
     component: HomeView,
+  },
+  {
+    path: "/movies",
+    name: "movies",
+    component: MoviesIndex,
+  },
+  {
+    path: "/movies/new",
+    name: "movies-new",
+    component: MoviesCreate,
+  },
+  {
+    path: "/movies/:id",
+    name: "movies-show",
+    component: MoviesShow,
+  },
+  {
+    path: "/movies/:id/edit",
+    name: "movies-edit",
+    component: MoviesEdit,
   },
   {
     path: "/about",
