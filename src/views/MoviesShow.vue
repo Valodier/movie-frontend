@@ -8,7 +8,6 @@
     |
     <router-link to="/movies"> Back to All Movies </router-link>
     <br />
-    <button v-on:click="movieDestroy(movie)">DESTROY</button>
   </div>
 </template>
 
@@ -27,13 +26,6 @@ export default {
       this.movie = response.data;
     });
   },
-  methods: {
-    movieDestroy: function (movie) {
-      axios.delete("/movies/" + movie.id + ".json").then((response) => {
-        console.log("Forever gone", response.data);
-        this.$router.push("/movies");
-      });
-    },
-  },
+  methods: {},
 };
 </script>

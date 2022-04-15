@@ -9,6 +9,7 @@
       <input type="text" v-model="editMovieParams.year" />
       <br />
       <input type="submit" value="Update" />
+      <button v-on:click="movieDestroy(movie)">DESTROY</button>
     </form>
   </div>
 </template>
@@ -43,6 +44,12 @@ export default {
           console.log("Error on update attempt", error.response);
           this.errors = error.response.data.errors;
         });
+    },
+    movieDestroy: function (movie) {
+      axios.delete("/movies/" + movie.id + ".json").then((response) => {
+        console.log("Forever gone", response.data);
+        this.$router.push("/movies");
+      });
     },
   },
 };
