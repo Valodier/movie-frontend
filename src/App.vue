@@ -3,13 +3,30 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/movies">Movies</router-link> |
     <router-link to="/movies/new"> Add Movie</router-link> |
-    <router-link to="/signup"> Sign Up</router-link> |
-    <router-link to="/login"> Log In</router-link> |
-    <router-link to="/logout"> Log Out</router-link> |
+    <span v-if="isLoggedIn()">
+      <router-link to="/logout"> Log Out</router-link> |
+    </span>
+    <span v-else>
+      <router-link to="/signup"> Sign Up</router-link> |
+      <router-link to="/login"> Log In</router-link> |
+    </span>
     <router-link to="/about">About</router-link> |
   </nav>
   <router-view />
 </template>
+
+<script>
+export default {
+  data: function () {
+    return {};
+  },
+  methods: {
+    isLoggedIn: function () {
+      return localStorage.getItem("jwt");
+    },
+  },
+};
+</script>
 
 <style>
 #app {

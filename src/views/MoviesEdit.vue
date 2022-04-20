@@ -27,7 +27,7 @@ export default {
   },
   created: function () {
     axios.get("/movies/" + this.$route.params.id + ".json").then((response) => {
-      console.log("Updated Show", response.data);
+      console.log("Updated Movie", response.data);
       this.movie = response.data;
       this.editMovieParams = this.movie;
     });

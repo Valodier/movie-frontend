@@ -5,7 +5,7 @@
       Title:
       <input type="text" v-model="newMovieParams.title" />
       Plot:
-      <input type="text" v-model="newMovieParams.plot" />
+      <input type="text" v-model="newMovieParams.plot" maxlength="250" />
       Year:
       <input type="text" v-model="newMovieParams.year" />
     </form>
